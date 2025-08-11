@@ -7,7 +7,7 @@ function asignarTextoElemento(elemento, texto) {
     elementoHTML.innerHTML = texto;
     return;
 }
-function agregarAmigos() {
+function agregarAmigo() {
     let amigo = document.getElementById('amigo');
      if (amigoInterno == "") {
         alert ("Por favor, inserte un nombre.")
@@ -28,7 +28,7 @@ function actualizaAmigos() {
     
     return;
 }
-function generarSorteo() {
+function sortearAmigo() {
     if (amigos.length <> 0) {
         let numeroGenerado =  Math.floor(Math.random()*amigos.length);
         let elemento = document.getElementById("resultado");
