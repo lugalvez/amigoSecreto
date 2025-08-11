@@ -29,8 +29,9 @@ function actualizaAmigos() {
     return;
 }
 function sortearAmigo() {
-    if (amigos.length <> 0) {
+    if (amigos.length != 0) {
         let numeroGenerado =  Math.floor(Math.random()*amigos.length);
         let elemento = document.getElementById("resultado");
         asignarTextoElemento(elemento, amigos[numeroGenerado])
      }
+    }     
