@@ -2,20 +2,23 @@
 let  amigo = "";
 let  amigos = [];
 let  lista = []
-function asignarTextoElemento(elemento, texto) {
-    let elementoHTML = document.querySelector(elemento);
-    elementoHTML.innerHTML = texto;
-    return;
-}
+let numeroGenerado= 0;
+let amigoSecreto=""
+
+
 function agregarAmigo() {
-    let amigo = document.getElementById('amigo');
+    let amigoInterno = document.getElementById('amigo').value;
+    console.log(amigoInterno);
+    
      if (amigoInterno == "") {
         alert ("Por favor, inserte un nombre.")
     } else {
          amigos.push(amigoInterno);
-        document.querySelector('amigo').value = '';
+        document.getElementById('amigo').value= '';
     }
+    actualizaAmigos()
     return;
+
 }
 function actualizaAmigos() {
     lista = document.getElementById('listaAmigos');
@@ -30,8 +33,17 @@ function actualizaAmigos() {
 }
 function sortearAmigo() {
     if (amigos.length != 0) {
-        let numeroGenerado =  Math.floor(Math.random()*amigos.length);
-        let elemento = document.getElementById("resultado");
-        asignarTextoElemento(elemento, amigos[numeroGenerado])
+        numeroGenerado =  Math.floor(Math.random()*amigos.length);
+        document.getElementById('resultado').value =amigos[numeroGenerado]
+        console.log(amigos[numeroGenerado]);
+        console.log(numeroGenerado);
+        console.log(document.getElementById('resultado').value)
      }
+    lista = document.getElementById('listaAmigos');
+    lista.innerHTML = ""
+    const nuevoElemento = document.createElement("li");
+     nuevoElemento.textContent = `El amigo secreto sorteado es:  ${document.getElementById('resultado').value}`;
+     nuevoElemento.style.color="Green";
+     lista.appendChild(nuevoElemento);
+  
     }     
